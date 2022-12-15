@@ -1,0 +1,32 @@
+{
+  "name": "Resolver Handler",
+  "version": "0.1.0",
+  "description": "Resolver Handler",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://*.google.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.google.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": ["https://*.google.com/*"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/cardano-logo.png",
+      "24": "assets/cardano-logo.png",
+      "32": "assets/cardano-logo.png"
+    },
+    "default_title": "Resolver Handler",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
